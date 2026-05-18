@@ -60,9 +60,9 @@ user-info {
 }
 
 .search-icon {
-  position: absolute;
-    left: 12px;
-    font-size: 18px;
+  vertical-align: -5px;
+  position: relative;
+    font-size: 30px;
     color: rgba(255, 255, 255, 0.6);;
     pointer-events: none;
 }
@@ -76,7 +76,7 @@ user-info {
 }
 
 .search input {
-  padding-left: 32px;
+  padding-left: 0px;
   border: none;
   outline: none;
   background: transparent;

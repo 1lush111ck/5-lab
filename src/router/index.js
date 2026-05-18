@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import MostViewedView from '../views/MostView.vue' // Импорт новой страницы
 
 const routes = [
   {
@@ -11,7 +10,7 @@ const routes = [
   {
     path: '/most-viewed',
     name: 'most-viewed',
-    component: MostViewedView // Путь к новой странице
+    component: () => import('../views/MostView.vue')
   }
 ]
 

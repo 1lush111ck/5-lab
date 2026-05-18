@@ -1,23 +1,22 @@
 <template>
   <div class="app-wrapper">
-    <TheHeader @toggle-sidebar="toggleSidebar" />
+    <TheNavbar @toggle-sidebar="toggleSidebar" />
     
     <div class="main-layout">
       <TheSidebar :isOpen="isSidebarOpen" />
       
       <main class="content" :class="{ 'full-width': !isSidebarOpen }">
-        <router-view />
-      </main>
+  <router-view /> </main>
     </div>
   </div>
 </template>
 
 <script>
-import TheHeader from './components/UI/TheHeader.vue';
+import TheNavbar from './components/UI/TheNavbar.vue';
 import TheSidebar from './components/UI/TheSidebar.vue';
 
 export default {
-  components: { TheHeader, TheSidebar },
+  components: { TheNavbar, TheSidebar },
   data() {
     return {
       isSidebarOpen: true
