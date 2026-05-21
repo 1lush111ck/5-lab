@@ -2,7 +2,7 @@
   <div class="news-card">
     <div class="small-image"></div>
     <div class="small-info">
-      <span class="small-date">{{ news.date }}</span>
+      <span class="small-date">{{ formatDate(news.date) }}</span>
       <h3 class="small-title">{{ news.title }}</h3>
     </div>
   </div>
@@ -11,7 +11,25 @@
 <script>
 export default {
   props: {
-    news: { type: Object, required: true }
+    news: {
+      type: Object,
+      required: true
+    }
+  },
+
+  methods: {
+    formatDate(dateString) {
+      const date = new Date(dateString)
+
+      const day = String(date.getDate()).padStart(2, '0')
+      const month = String(date.getMonth() + 1).padStart(2, '0')
+      const year = date.getFullYear()
+
+      const hours = String(date.getHours()).padStart(2, '0')
+      const minutes = String(date.getMinutes()).padStart(2, '0')
+
+      return `${day}.${month}.${year}, в ${hours}:${minutes}`
+    }
   }
 }
 </script>

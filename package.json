@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@jamescoyle/vue-icon": "^0.1.2",
     "@mdi/font": "^7.4.47",
+    "@mdi/js": "^7.4.47",
     "icons": "^1.0.0",
     "lucide-vue-next": "^1.0.0",
     "vue": "^3.5.32",

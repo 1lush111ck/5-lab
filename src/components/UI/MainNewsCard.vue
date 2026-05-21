@@ -2,7 +2,7 @@
   <div class="main-news-card">
     <div class="image-placeholder"></div>
     <div class="content">
-      <span class="date">{{ news.date }}</span>
+      <span class="date">{{ formatDate(news.date) }}</span>
       <h2 class="title">{{ news.title }}</h2>
       <p class="description">{{ news.description }}</p>
       <button class="btn-more">Читать далее</button>
@@ -13,7 +13,25 @@
 <script>
 export default {
   props: {
-    news: { type: Object, required: true }
+    news: {
+      type: Object,
+      required: true
+    }
+  },
+
+  methods: {
+    formatDate(dateString) {
+      const date = new Date(dateString)
+
+      const day = String(date.getDate()).padStart(2, '0')
+      const month = String(date.getMonth() + 1).padStart(2, '0')
+      const year = date.getFullYear()
+
+      const hours = String(date.getHours()).padStart(2, '0')
+      const minutes = String(date.getMinutes()).padStart(2, '0')
+
+      return `${day}.${month}.${year}, в ${hours}:${minutes}`
+    }
   }
 }
 </script>
@@ -37,6 +55,7 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
   padding-top: 10px;
+  margin: 0;
 }
 
 .date {
